@@ -8,9 +8,12 @@ This code is only proof-of-principle, it is released freely and without any warr
 
 
 To set up the BSA package, start Octave and type: 
-```bsa_setup```
+
+   bsa_setup
+
 at the command line. For a demo of test cases, type: 
-```bsa_demo```
+
+   bsa_demo
 
 
 Key Functions
