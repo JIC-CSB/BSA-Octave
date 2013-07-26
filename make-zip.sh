@@ -1,3 +1,3 @@
 #!/bin/sh
 
-zip ../BSA-Octave *
+zip -r ../BSA-Octave *
