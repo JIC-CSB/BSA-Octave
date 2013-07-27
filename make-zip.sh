@@ -1,3 +1,4 @@
 #!/bin/sh
 
-zip -r ../BSA-Octave *
+cd ..
+zip -r BSA-Octave.zip BSA-Octave/

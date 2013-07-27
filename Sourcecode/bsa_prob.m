@@ -30,7 +30,7 @@
 function [logST,ST,sigma,spden,signaltonoise] = bsa_prob (data,fvalues,maxlogST)
   ndata=rows(fvalues);
   nfunc=columns(fvalues);
-  [orthofvalues,evalues] = bsa_orthonormalize (fvalues);
+  [orthofvalues,evalues] = bsa_orthonormalize(fvalues);
   h = data*orthofvalues;
   meanhsq = sumsq(h)/nfunc;
   meandsq = sumsq(data)/ndata;
