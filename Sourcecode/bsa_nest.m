@@ -19,12 +19,12 @@
 # OUTPUT(4): logZ = evidence, logZerror, evidence error, momega = mean
 # omega value, stomega = standard deviation of omega
 #####################################################################################################
-function [logZ logZerror momega stomega] = bsa_nest(data,name,start,stop,nsamples,nbackg,interval,resultsfile,nposts)
+function [logZ logZerror momega stomega posts] = bsa_nest(data,name,start,stop,nsamples,nbackg,interval,resultsfile,nposts)
   fid = fopen(resultsfile,"a");
   c = ["name ","evidence ","evidence_error ","mean_omega ","st_omega ","mean_period ","st_period "];
   fprintf(fid,"%s\n",c);
   fclose(fid);
-  [logZ logZerror momega stomega mperiod stperiod] = bsa_evidence(data,start,stop,1,nsamples,nbackg,interval,nposts);
+  [logZ logZerror momega stomega mperiod stperiod posts] = bsa_evidence(data,start,stop,1,nsamples,nbackg,interval,nposts);
   fid = fopen(resultsfile,"a");
   res = [name," " ,num2str(logZ)," ",num2str(logZerror)," " ,num2str(momega)," ",num2str(stomega)," ",num2str(mperiod)," ",num2str(stperiod)];
   fprintf(fid,"%s\n",res);

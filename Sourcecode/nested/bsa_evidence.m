@@ -17,7 +17,7 @@
 # omega value, stomega = standard deviation of omega, mperiod =  mean
 # period, stperiod = standard deviation of omega
 ##################################################
-function [logZ logZerror momega stomega mperiod stperiod] = bsa_evidence (data,omega_min,omega_max,dim,nsamples,nbackg,interval,nposts)
+function [logZ logZerror momega stomega mperiod stperiod posts] = bsa_evidence (data,omega_min,omega_max,dim,nsamples,nbackg,interval,nposts)
   samples=bsa_prior(omega_min, omega_max, dim, nsamples);
   samplesLLHoods = bsa_getLLHoods(data,samples,interval,nbackg,dim);
   samplesLWeights = zeros(nsamples,1);
